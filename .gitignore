@@ -1,7 +1,7 @@
 nbproject/*
-config/core.php
-config/database.php
-tmp/cache/cake_*
-tmp/cache/persistent/cake_*
-tmp/cache/models/cake_*
+brekfarm/config/core.php
+brekfarm/config/database.php
+brekfarm/tmp/cache/cake_*
+brekfarm/tmp/cache/persistent/cake_*
+brekfarm/tmp/cache/models/cake_*
 *.log
