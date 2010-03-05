@@ -1,0 +1,50 @@
+/* -------------------------------------------------------------- 
+   TABS - Starting point for turning lists into tabs.
+-------------------------------------------------------------- */
+
+ul.tabs { margin: 0; padding: 0; }
+ul.tabs li ul { float: left; }
+ul.tabs li { float: left; list-style: none; margin: 0; padding: 0; }
+ul.tabs li a { float: left; display: block; }
+
+/* Clearing floats without extra markup  */
+ul.tabs { display: inline-block; }
+ul.tabs:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+* html ul.tabs { height: 1%; }
+ul.tabs, ul.tabs li ul { display: block; }
+
+
+/* -------------------------------------------------------------- 
+   WRAPPER - Clearing floats without extra markup.
+-------------------------------------------------------------- */
+
+.wrapper { display: inline-block; }
+.wrapper:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+* html .wrapper { height: 1%; }
+.wrapper { display: block; }
+
+
+/* -------------------------------------------------------------- 
+   (h)orizontal Form and (v)ertical Form
+-------------------------------------------------------------- */
+
+/* hFORM */
+form.hform div { margin-bottom: 10px; font-size: 14px; line-height: 20px; }
+form.hform div label { float: left; width: 150px; font-weight: normal; }
+form.hform div input { width: 200px; }
+form.hform div select { width: 200px; }
+form.hform div.submit input { width: auto; }
+form.hform div input.checkbox { width: auto; }
+form.hform div input.radio { width: auto; }
+form.hform div.checkbox { margin-left: 150px; }
+form.hform div.checkbox label { float: none; }
+form.hform div.checkbox input { width: auto; }
+form.hform div.required label { font-weight: bold; }
+form.hform div.error { background-color: yellow; }
+form.hform div.error-message { color: red; }
+form.hform input.form-error { background-color: red; }
+
+/* vFORM */
+form.vform div { margin-bottom: 10px; }
+form.vform div label { display: block; }
+form.vform div.checkbox label { display: inline; }

@@ -1,0 +1,53 @@
+<h2><?php echo $title = __('Producer Registration', true); $this->set('title', $title); $html->addCrumb($title); ?></h2>
+<?php echo $form->create('Producer', array('class' => 'hform')); ?>
+<?php
+	$tos = $html->link(__('Terms of Service', true), array('controller' => 'pages', 'action' => 'display', 'tos', 'admin' => false));
+	echo $form->inputs(array(
+		'Producer.user_id' => array(
+			'type' => 'hidden'),
+		'Producer.title' => array(
+			'label' => __('Title', true),
+			'maxlength' => 128,
+			'div' => 'input text required',
+			'error' => array(
+				'between' => sprintf(__('Title length must be between %s and %s characters', true), 6, 128),
+				'isUnique' => __('This producer title is taken', true))),
+		'Producer.address' => array(
+			'label' => __('Address', true),
+			'maxlength' => 255,
+			'div' => 'input text required',
+			'error' => __('This field cannot be left blank', true)),
+		'Producer.phone' => array(
+			'label' => __('Phone', true),
+			'maxlength' => 16,
+			'div' => 'input text required',
+			'error' => array(
+				'format' => __('This is not valid phone number', true),
+				'isUnique' => __('This phone is taken', true))),
+		'Producer.email' => array(
+			'label' => __('E-mail', true),
+			'maxlength' => 128,
+			'error' => array(
+				'maxLength' => __('This email is too long to be a real one', true),
+				'format' => __('This is not a valid email', true),
+				'server' => __('This e-mail server is unknown by DNS, ask YOUR administrator for fix', true),
+				'isUnique' => __('This email is taken', true),
+				'isUniqueGlobally' => __('This email is taken', true))),
+		'Producer.url' => array(
+			'label' => __('Website URL', true),
+			'maxlength' => 128,
+			'error' => __('This is not valid website URL', true)),
+		'Producer.description' => array(
+			'label' => __('Description', true),
+			'error' => __('This field cannot be left blank', true)),
+		'Producer.promo_code' => array(
+			'label' => __('Promo Code', true),
+			'maxlength' => 6,
+			'error' => array(
+				'notExists' => __('This promo code is not valid', true),
+				'selfJoin' => __('You can not use your own promo code', true))),
+		'Producer.tos' => array(
+			'label' => sprintf(__('I agree with %s', true), $tos),
+			'error' => __('Agreement with Terms of Service is required', true)),
+		'legend' => __('Producer Profile', true))); ?>
+<?php echo $form->end(__('Register', true)); ?>

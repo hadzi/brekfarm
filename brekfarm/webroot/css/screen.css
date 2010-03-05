@@ -1,0 +1,84 @@
+@import "boilerplate.css";
+@import "plugins.css";
+
+/* -------------------------------------------------------------- 
+   SCREEN
+-------------------------------------------------------------- */
+
+/* PAGE */
+#page {}
+
+/* HEADER */
+#header { padding: 20px; background: #333; border-bottom: 2px solid #222; }
+#header h1 { margin-bottom: 0; font-size: 20px; line-height: 20px; color: #fff; }
+
+/* ACCOUNT MENU */
+#account { float: right; padding: 0; font-size: 12px; }
+#account .tabs a { padding: 0 10px; color: #ccc; text-decoration: none; }
+#account .tabs a:hover { background: #bbb; color: #333; }
+
+/* NAVIGATION */
+#navigation { padding: 0 10px; background: #ddd; border-bottom: 2px solid #bbb; }
+#navigation .tabs a { padding: 5px 10px; color: #666; text-decoration: none; }
+#navigation .tabs a:hover { background: #bbb; color: #333; }
+
+/* BODY */
+/*#body { padding: 20px; }*/
+#body .tabs a { padding: 5px 10px; text-decoration: none; }
+#body .tabs a:hover { background: #bbb; color: #333; }
+
+/* CONTENT */
+#content { float: left; width: 460px; margin-right: 130px; padding-left: 20px; }
+#admin { padding: 0 20px 20px 20px; }
+h2 { font-size: 24px; }
+th, td { font-size: 80%; }
+th { background-color: activeborder}
+tr.altrow, dt.altrow, dd.altrow { background-color: silver; }
+a.action { float: right; padding: 2px; }
+
+/* BREADCRUMBS */
+#breadcrumbs { font-size: 80%; padding: 10px 0 10px 0; }
+
+/* SIDEBARS */
+div.sideBar { float: left; background-color: #eee; padding: 10px; }
+div.sideBar h3, div.sideBar ul, div.sideBar ol { color: #888; font-size: 16px; }
+div.sideBar ul a { color: #555; }
+#leftSideBar { width: 150px; }
+#rightSideBar { width: 220px; }
+
+/* FOOTER */
+#footer { padding: 10px 20px; border-top: 1px solid #eee; }
+#footer .tabs { font-size: 13px; }
+#footer .tabs li { margin-right: 20px; }
+#footer .tabs a { color: #999; text-decoration: none; }
+#footer p.quiet { float: right; color: #ccc; }
+
+/* FLASH */
+div.message { padding: 5px; background-color: blue; font-weight: bold; font-size: 14px; padding: 4px; }
+
+/* PAGINATION */
+div.paging, p.counter { font-size: 12px; line-height: 16px; margin-bottom:10px; }
+div.paging div { display: inline; }
+div.paging div.disabled { color: grey; }
+
+/* ACCORDION */
+ul.switcher { margin: 0 !important; padding: 0; height: 30px; border-bottom: 1px solid #666; }
+ul.switcher li { float: left; padding: 0; margin: 0; list-style-type: none; }
+ul.switcher a { float: left; font-size: 13px; display: block; padding: 5px 30px; text-decoration: none; border: 1px solid #666; border-bottom: 0px; height: 18px; background-color: #efefef; color: #777; margin-right: 2px; -moz-border-radius-topleft: 4px; -moz-border-radius-topright: 4px; position: relative; top: 1px; }
+ul.switcher a:hover { background-color: #F7F7F7; color: #333; }
+ul.switcher a.current { background-color: #ddd; border-bottom: 2px solid #ddd; color: #000; cursor: default; }
+div.panes div { display: none; border: 1px solid #666; border-width: 0 1px 1px 1px; min-height: 150px; padding: 15px 20px; background-color: #ddd; }
+
+/* MENU */
+ul.potato-menu { margin: 0; padding: 0; width: auto; list-style: none; }
+ul.potato-menu:after { content: " "; display: block; visibility: hidden; clear: both; height: 0.1px; font-size: 0.1em; line-height: 0; }
+ul.potato-menu li.potato-menu-item { margin: 0; padding: 0; position: relative; list-style: none; list-style-position: outside; display: inline; float: left; }
+ul.potato-menu li.potato-menu-item a { display: block; text-decoration: none; white-space: nowrap; outline: 0; }
+ul.potato-menu ul.potato-menu-group { margin: 0; padding: 0; -webkit-padding-start: 0; -webkit-padding-end: 0; position: absolute; display: none; z-index: 1000; border: 1px solid black; background: #eee; }
+ul.potato-menu ul.potato-menu-group a { width: 98px; }
+ul.potato-menu-vertical { width: 145px; }
+ul.potato-menu-vertical li.potato-menu-item a { width: 120px; }
+.potato-menu-has-holizontal > a { background: url(../img/arrow_right.gif) right no-repeat; }
+.potato-menu-has-holizontal > a:hover { background: url(../img/arrow_right.gif) right no-repeat; }
+ul.potato-menu-vertical a { padding:5px 12px 5px 12px;}
+ul.potato-menu-vertical a:hover { background: #bbb; }

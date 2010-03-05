@@ -1,0 +1,39 @@
+<h2><?php echo $title = __('Sign Up', true); $this->set('title', $title); $html->addCrumb($title); ?></h2>
+<?php echo $form->create('User', array('class' => 'hform')); ?>
+<?php $tos = $html->link(__('Terms of Service', true), array('controller' => 'pages', 'action' => 'display', 'tos', 'admin' => false));
+	echo $form->inputs(array(
+		'User.username' => array(
+			'label' => __('Username', true),
+			'maxlength' => 64,
+			'div' => 'input text required',
+			'error' => array(
+				'characters' => __('Only unaccented letters or numbers are allowed', true),
+				'between' => sprintf(__('Username length must be between %s and %s characters', true), 4, 64),
+				'isUnique' => __('This username is taken', true))),
+		'User.passwd' => array(
+			'label' => __('Password', true),
+			'div' => 'input password required',
+			'error' => array(
+				'minLength' => sprintf(__('Password length must be at least %s characters', true), 4),
+				'matchUsername' => __('Password should not be the same as username', true),
+				'matchPasswords' => __('Entered passwords does not match', true))),
+		'User.passwd_check' => array(
+			'label' => __('Password again', true),
+			'div' => 'input password required',
+			'type' => 'password',
+			'error' => __('Entered passwords does not match', true)),
+		'User.email' => array(
+			'label' => __('E-mail', true),
+			'maxlength' => 128,
+			'div' => 'input text required',
+			'error' => array(
+				'maxLength' => __('This email is too long to be a real one', true),
+				'format' => __('This is not a valid email', true),
+				'server' => __('This e-mail server is unknown by DNS, ask YOUR administrator for fix', true),
+				'isUnique' => __('This email is taken', true),
+				'isUniqueGlobally' => __('This email is taken', true))),
+		'User.tos' => array(
+			'label' => sprintf(__('I agree with %s', true), $tos),
+			'error' => __('Agreement with Terms of Service is required', true)),
+		'legend' => __('User Account', true))); ?>
+<?php echo $form->end(__('Sign Up', true)); ?>

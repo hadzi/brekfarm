@@ -1,0 +1,565 @@
+# LANGUAGE translation of CakePHP Application
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# No version information was available in the source files.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2009-10-17 21:54+0200\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+
+#: /app_controller.php:163
+msgid "Invalid username and password combination. Please, try it again."
+msgstr ""
+
+#: /app_controller.php:164
+msgid "You are not authorized to access that page."
+msgstr ""
+
+#: /controllers/producers_controller.php:62
+msgid "A new producer account at server %s"
+msgstr ""
+
+#: /controllers/producers_controller.php:65
+msgid "A producer account has been created. You will receive an e-mail shortly to authenticate your account."
+msgstr ""
+
+#: /controllers/producers_controller.php:70
+msgid "A new producer account could not be created caused by temporary server problems. Try to register again in few minutes, please."
+msgstr ""
+
+#: /controllers/producers_controller.php:73
+msgid "A producer account has been created. We will contact you soon to arrange the contract."
+msgstr ""
+
+#: /controllers/producers_controller.php:97
+#: /controllers/users_controller.php:113
+msgid "This URL no longer exists."
+msgstr ""
+
+#: /controllers/producers_controller.php:107
+msgid "Your email was validated. We will contact you soon to arrange the contract."
+msgstr ""
+
+#: /controllers/producers_controller.php:111
+#: /controllers/users_controller.php:123
+msgid "Your email was validated."
+msgstr ""
+
+#: /controllers/users_controller.php:60
+msgid "Bank Account Transfer"
+msgstr ""
+
+#: /controllers/users_controller.php:61
+msgid "Post Office Remittance"
+msgstr ""
+
+#: /controllers/users_controller.php:80
+msgid "A new user account at server %s"
+msgstr ""
+
+#: /controllers/users_controller.php:83
+msgid "Your account has been created. You will receive an e-mail shortly to authenticate your account. Once validated, you will be able to login."
+msgstr ""
+
+#: /controllers/users_controller.php:88
+msgid "A new account could not be created caused by temporary server problems. Try to register again in few minutes, please."
+msgstr ""
+
+#: /controllers/users_controller.php:130
+msgid "It is impossible to change password of this account, it is waiting for another confirmation."
+msgstr ""
+
+#: /controllers/users_controller.php:136
+msgid "Password reset at server %s"
+msgstr ""
+
+#: /controllers/users_controller.php:140
+msgid "You will receive an e-mail with the temporary password shortly."
+msgstr ""
+
+#: /controllers/users_controller.php:144;311
+msgid "Password could not changed caused by temporary server problems. Try it again in few minutes, please."
+msgstr ""
+
+#: /controllers/users_controller.php:166
+msgid "Your account has been saved."
+msgstr ""
+
+#: /controllers/users_controller.php:186;198
+msgid "It is impossible to change email of this account, it is waiting for another confirmation."
+msgstr ""
+
+#: /controllers/users_controller.php:204
+msgid "Request for email change at server %s"
+msgstr ""
+
+#: /controllers/users_controller.php:209
+msgid "Your email has been changed. You will receive an e-mail with the confirmation link shortly."
+msgstr ""
+
+#: /controllers/users_controller.php:215
+msgid "Your email could not be changed caused by temporary server problems. Try it again in few minutes, please."
+msgstr ""
+
+#: /controllers/users_controller.php:246
+msgid "Welcome back, %s!"
+msgstr ""
+
+#: /controllers/users_controller.php:267
+msgid "You were logged out."
+msgstr ""
+
+#: /controllers/users_controller.php:283
+msgid "You will receive an e-mail with the description how to change your password shortly."
+msgstr ""
+
+#: /controllers/users_controller.php:302
+msgid "Request for password reset at server %s"
+msgstr ""
+
+#: /views/elements/email/html/producer_registration.ctp:1
+#: /views/elements/email/text/producer_registration.ctp:1
+msgid "Producer Account Registration"
+msgstr ""
+
+#: /views/elements/email/html/producer_registration.ctp:2
+#: /views/elements/email/text/producer_registration.ctp:4
+msgid "To validate your producer account at %s, visit the following URL within 24 hours."
+msgstr ""
+
+#: /views/elements/email/html/user_password_init.ctp:1
+#: /views/elements/email/text/user_password_init.ctp:1
+msgid "Reset Password Init"
+msgstr ""
+
+#: /views/elements/email/html/user_password_init.ctp:2
+#: /views/elements/email/text/user_password_init.ctp:4
+msgid "To reset password of your user account at %s, visit the following URL within 24 hours."
+msgstr ""
+
+#: /views/elements/email/html/user_password_reset.ctp:1
+#: /views/elements/email/text/user_password_reset.ctp:1
+msgid "Reset Password"
+msgstr ""
+
+#: /views/elements/email/html/user_password_reset.ctp:2
+#: /views/elements/email/text/user_password_reset.ctp:4
+msgid "Password of your user account at %s was forced to"
+msgstr ""
+
+#: /views/elements/email/html/user_password_reset.ctp:3
+#: /views/elements/email/text/user_password_reset.ctp:5
+msgid "Sign In and change your password as soon as possible, please."
+msgstr ""
+
+#: /views/elements/email/html/user_registration.ctp:1
+#: /views/elements/email/text/user_registration.ctp:1
+msgid "User Account Registration"
+msgstr ""
+
+#: /views/elements/email/html/user_registration.ctp:2
+#: /views/elements/email/text/user_registration.ctp:4
+msgid "To validate your user account at %s, visit following URL within 24 hours."
+msgstr ""
+
+#: /views/elements/sidebox/ads.ctp:1
+msgid "Advertising"
+msgstr ""
+
+#: /views/elements/sidebox/articles_recent.ctp:1
+msgid "Recent Articles"
+msgstr ""
+
+#: /views/elements/sidebox/producers_top.ctp:1
+msgid "Top Producers"
+msgstr ""
+
+#: /views/errors/error404.ctp:3
+msgid "Error"
+msgstr ""
+
+#: /views/errors/error404.ctp:4
+msgid "The requested address %s was not found on this server."
+msgstr ""
+
+#: /views/helpers/menu.php:30
+#: /views/producers/admin_index.ctp:1
+msgid "Producers"
+msgstr ""
+
+#: /views/helpers/menu.php:31
+#: /views/users/admin_index.ctp:1
+msgid "Users"
+msgstr ""
+
+#: /views/helpers/menu.php:33
+msgid "Edit Account"
+msgstr ""
+
+#: /views/helpers/menu.php:34
+msgid "Logout"
+msgstr ""
+
+#: /views/helpers/menu.php:36
+msgid "Signed in as %s"
+msgstr ""
+
+#: /views/helpers/menu.php:38
+#: /views/users/login.ctp:1;18
+msgid "Sign In"
+msgstr ""
+
+#: /views/helpers/menu.php:39
+#: /views/users/add.ctp:1;58
+msgid "Sign Up"
+msgstr ""
+
+#: /views/helpers/menu.php:45;58
+#: /views/pages/cs/home.ctp:1
+msgid "Main Page"
+msgstr ""
+
+#: /views/helpers/menu.php:59
+msgid "Catalogue"
+msgstr ""
+
+#: /views/helpers/menu.php:60
+msgid "Articles"
+msgstr ""
+
+#: /views/helpers/menu.php:61
+#: /views/producers/add.ctp:1
+msgid "About Us"
+msgstr ""
+
+#: /views/layouts/admin.ctp:28
+#: /views/layouts/default.ctp:38
+msgid "By use of this website, you agree to the %s"
+msgstr ""
+
+#: /views/layouts/admin.ctp:28
+#: /views/layouts/default.ctp:38
+#: /views/pages/cs/tos.ctp:1
+#: /views/users/add.ctp:5
+msgid "Terms of Service"
+msgstr ""
+
+#: /views/layouts/email/html/default.ctp:8
+#: /views/layouts/email/text/default.ctp:3
+msgid "Farmers etc"
+msgstr ""
+
+#: /views/pages/cs/home.ctp:6
+msgid "Product"
+msgstr ""
+
+#: /views/pages/cs/home.ctp:8
+msgid "Search Form"
+msgstr ""
+
+#: /views/pages/cs/home.ctp:9
+msgid "Search"
+msgstr ""
+
+#: /views/producers/add.ctp:8
+#: /views/producers/admin_index.ctp:5
+msgid "Title"
+msgstr ""
+
+#: /views/producers/add.ctp:12
+msgid "Title length must be between %s and %s characters"
+msgstr ""
+
+#: /views/producers/add.ctp:13
+msgid "This producer title is taken"
+msgstr ""
+
+#: /views/producers/add.ctp:15
+#: /views/producers/admin_index.ctp:6
+msgid "Address"
+msgstr ""
+
+#: /views/producers/add.ctp:17;37
+msgid "This field cannot be left blank"
+msgstr ""
+
+#: /views/producers/add.ctp:19
+#: /views/producers/admin_index.ctp:7
+msgid "Phone"
+msgstr ""
+
+#: /views/producers/add.ctp:21
+msgid "This is not valid phone number"
+msgstr ""
+
+#: /views/producers/add.ctp:23
+#: /views/producers/admin_index.ctp:8
+#: /views/users/add.ctp:29
+#: /views/users/admin_index.ctp:6
+#: /views/users/email.ctp:6
+#: /views/users/home.ctp:5
+#: /views/users/reset.ctp:6
+msgid "E-mail"
+msgstr ""
+
+#: /views/producers/add.ctp:26
+#: /views/users/add.ctp:33
+#: /views/users/email.ctp:10
+#: /views/users/reset.ctp:10
+msgid "This email is too long to be a real one"
+msgstr ""
+
+#: /views/producers/add.ctp:27
+#: /views/users/add.ctp:34
+#: /views/users/email.ctp:11
+#: /views/users/reset.ctp:11
+msgid "This is not a valid email"
+msgstr ""
+
+#: /views/producers/add.ctp:28
+#: /views/users/add.ctp:35
+#: /views/users/email.ctp:12
+#: /views/users/reset.ctp:12
+msgid "This e-mail server is unknown by DNS, ask YOUR administrator for fix"
+msgstr ""
+
+#: /views/producers/add.ctp:29;30
+#: /views/users/add.ctp:36
+#: /views/users/email.ctp:13
+msgid "This email is taken"
+msgstr ""
+
+#: /views/producers/add.ctp:32
+#: /views/producers/admin_index.ctp:9
+msgid "Website URL"
+msgstr ""
+
+#: /views/producers/add.ctp:34
+msgid "This is not valid website URL"
+msgstr ""
+
+#: /views/producers/add.ctp:36
+msgid "Description"
+msgstr ""
+
+#: /views/producers/add.ctp:39
+#: /views/users/admin_index.ctp:7
+#: /views/users/home.ctp:22
+msgid "Promo Code"
+msgstr ""
+
+#: /views/producers/add.ctp:40
+msgid "This promo code is not valid"
+msgstr ""
+
+#: /views/producers/add.ctp:41
+msgid "Producer registration"
+msgstr ""
+
+#: /views/producers/add.ctp:42
+msgid "Register"
+msgstr ""
+
+#: /views/producers/admin_index.ctp:10
+msgid "Client Code"
+msgstr ""
+
+#: /views/producers/admin_index.ctp:11
+#: /views/users/admin_index.ctp:9
+msgid "Status"
+msgstr ""
+
+#: /views/producers/admin_index.ctp:12
+#: /views/users/admin_index.ctp:11
+#: /views/users/home.ctp:44
+msgid "Created"
+msgstr ""
+
+#: /views/producers/admin_index.ctp:13
+#: /views/users/admin_index.ctp:12
+msgid "Modified"
+msgstr ""
+
+#: /views/producers/admin_index.ctp:58
+#: /views/users/admin_index.ctp:54
+msgid "Page %page% of %pages%, showing %current% records out of %count% total, starting on record %start%, ending on %end%"
+msgstr ""
+
+#: /views/producers/admin_index.ctp:62
+#: /views/users/admin_index.ctp:58
+msgid "previous"
+msgstr ""
+
+#: /views/producers/admin_index.ctp:64
+#: /views/users/admin_index.ctp:60
+msgid "next"
+msgstr ""
+
+#: /views/producers/edit.ctp:1
+msgid "Producer Edit"
+msgstr ""
+
+#: /views/producers/email.ctp:1
+#: /views/users/email.ctp:1
+msgid "Email Change"
+msgstr ""
+
+#: /views/users/add.ctp:8
+#: /views/users/admin_index.ctp:5
+#: /views/users/login.ctp:7
+msgid "Username"
+msgstr ""
+
+#: /views/users/add.ctp:12
+msgid "Only unaccented letters or numbers are allowed"
+msgstr ""
+
+#: /views/users/add.ctp:13
+msgid "Username length must be between %s and %s characters"
+msgstr ""
+
+#: /views/users/add.ctp:14
+msgid "This username is taken"
+msgstr ""
+
+#: /views/users/add.ctp:16
+#: /views/users/edit.ctp:8
+#: /views/users/login.ctp:11
+msgid "Password"
+msgstr ""
+
+#: /views/users/add.ctp:19
+#: /views/users/edit.ctp:11
+msgid "Password length must be at least %s characters"
+msgstr ""
+
+#: /views/users/add.ctp:20
+#: /views/users/edit.ctp:12
+msgid "Password should not be the same as username"
+msgstr ""
+
+#: /views/users/add.ctp:21
+#: /views/users/edit.ctp:13
+msgid "Entered passwords does not match"
+msgstr ""
+
+#: /views/users/add.ctp:23
+#: /views/users/edit.ctp:15
+msgid "Password again"
+msgstr ""
+
+#: /views/users/add.ctp:26
+#: /views/users/edit.ctp:18
+#: /views/users/login.ctp:17
+msgid "Login Credentials"
+msgstr ""
+
+#: /views/users/add.ctp:38
+msgid "I agree with %s"
+msgstr ""
+
+#: /views/users/add.ctp:39
+msgid "Agreement with Terms of Service is required"
+msgstr ""
+
+#: /views/users/add.ctp:41
+#: /views/users/edit.ctp:21
+#: /views/users/home.ctp:16
+msgid "Name for comments"
+msgstr ""
+
+#: /views/users/add.ctp:44
+#: /views/users/edit.ctp:24
+msgid "Maximum length of public name is %s characters"
+msgstr ""
+
+#: /views/users/add.ctp:46
+#: /views/users/edit.ctp:26
+#: /views/users/home.ctp:32
+msgid "Payment Method"
+msgstr ""
+
+#: /views/users/add.ctp:49
+#: /views/users/edit.ctp:29
+msgid "Invalid option"
+msgstr ""
+
+#: /views/users/add.ctp:50;56
+#: /views/users/edit.ctp:30;36
+msgid "Specify both (or none) payment settings, please"
+msgstr ""
+
+#: /views/users/add.ctp:52
+#: /views/users/edit.ctp:32
+msgid "-- select --"
+msgstr ""
+
+#: /views/users/add.ctp:54
+#: /views/users/edit.ctp:34
+#: /views/users/home.ctp:38
+msgid "Payment Target"
+msgstr ""
+
+#: /views/users/add.ctp:57
+#: /views/users/edit.ctp:37
+#: /views/users/email.ctp:14
+#: /views/users/reset.ctp:13
+msgid "User Account"
+msgstr ""
+
+#: /views/users/admin_index.ctp:8
+#: /views/users/home.ctp:27
+msgid "Promo Rate"
+msgstr ""
+
+#: /views/users/admin_index.ctp:10
+msgid "User Role"
+msgstr ""
+
+#: /views/users/edit.ctp:1
+msgid "Account Edit"
+msgstr ""
+
+#: /views/users/edit.ctp:38
+#: /views/users/email.ctp:15
+#: /views/users/reset.ctp:14
+msgid "Send"
+msgstr ""
+
+#: /views/users/home.ctp:1
+msgid "Your Homepage"
+msgstr ""
+
+#: /views/users/home.ctp:2;7
+msgid "edit"
+msgstr ""
+
+#: /views/users/home.ctp:11
+msgid "Avatar for comments"
+msgstr ""
+
+#: /views/users/login.ctp:14
+msgid "Remember me for %s days"
+msgstr ""
+
+#: /views/users/login.ctp:20
+#: /views/users/reset.ctp:1
+msgid "Forgotten Password"
+msgstr ""
+
+#: /views/users/login.ctp:21
+msgid "If you forgot Your password, visit following link %s"
+msgstr ""
+
+#: /webroot/test.php:98
+msgid "Debug setting does not allow access to this url."
+msgstr ""
+
