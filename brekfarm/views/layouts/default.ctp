@@ -41,6 +41,5 @@
 </div>
 <?php echo $menu->javascript(); ?>
 <?php echo $bottom_for_layout; ?>
-<?php echo $cakeDebug; ?>
 </body>
 </html>

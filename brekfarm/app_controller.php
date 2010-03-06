@@ -201,7 +201,7 @@ class AppController extends Controller {
 			'ip' => $this->RequestHandler->getClientIP(),
 			'here' => $this->here,
 			'user_agent' => (string) env('HTTP_USER_AGENT'),
-			'referrer' => $this->RequestHandler->getReferrer(),
+			'referrer' => $this->RequestHandler->getReferer(),
 			'referer' => $this->referer()
 		);
 	}
