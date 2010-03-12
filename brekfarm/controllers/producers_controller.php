@@ -121,10 +121,10 @@ class ProducersController extends AppController {
 		$this->Producer->id = $id;
 		$status = $this->Producer->field('status');
 		switch ($status) {
-			case 'new':
-				$this->Producer->setStatus('pending');
-				$this->Session->setFlash(__('Your email was validated. We will contact you soon to arrange the contract.', true));
-				break;
+//			case 'new':
+//				$this->Producer->setStatus('pending');
+//				$this->Session->setFlash(__('Your email was validated. We will contact you soon to arrange the contract.', true));
+//				break;
 			default:
 				$this->Producer->setStatus('ok');
 				$this->Session->setFlash(__('Your email was validated.', true));
