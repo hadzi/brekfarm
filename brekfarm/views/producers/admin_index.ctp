@@ -53,19 +53,19 @@ foreach ($producers as $producer):
 			<?php echo $time->format('d.m.Y', $producer['Producer']['modified']); ?>
 		</td>
 		<td class="actions">
-                    <?php
-                        if ($producer['Producer']['status'] == 'denied') {
-                            echo $html->link(__('Allow', true), array('action' => 'allow', $producer['Producer']['id']));
-                        } else {
-                            echo $html->link(__('Deny', true), array('action' => 'deny', $producer['Producer']['id']));
-                        }
-                    ?>
-                    &nbsp;
-                    <?php
-                        if (empty($producer['Producer']['user_id'])) {
-                            echo $html->link(__('Set Owner', true), array('action' => 'owner', $producer['Producer']['id']));
-                        }
-                    ?>
+			<?php
+			if ($producer['Producer']['status'] == 'denied') {
+				echo $html->link(__('Allow', true), array('action' => 'allow', $producer['Producer']['id']));
+			} else {
+				echo $html->link(__('Deny', true), array('action' => 'deny', $producer['Producer']['id']));
+			}
+			?>
+			&nbsp;
+			<?php
+			if (empty($producer['Producer']['user_id'])) {
+				echo $html->link(__('Set Owner', true), array('action' => 'owner', $producer['Producer']['id']));
+			}
+			?>
 		</td>
 	</tr>
 <?php endforeach; ?>

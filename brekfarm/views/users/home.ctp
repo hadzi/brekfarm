@@ -36,15 +36,15 @@
 			</dd>
 			<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Promoted Producers'); ?></dt>
 			<dd<?php if ($i++ % 2 == 0) echo $class;?>>
-                                <?php if (empty($user['PromotedProducer'])):?>
-                                <?php __('No producer used your promo code for registration yet.'); ?>
-                                <?php else:?>                            
-                		<?php foreach ($user['PromotedProducer'] as $producer):?>
-                                    <p><?php echo $producer['url'] ? $html->link($producer['title'], $producer['url']) : $producer['title'];?></p>
-                                <?php endforeach; ?>
-                		<?php endif; ?>
+				<?php if (empty($user['PromotedProducer'])):?>
+				<?php __('No producer used your promo code for registration yet.'); ?>
+				<?php else:?>
+				<?php foreach ($user['PromotedProducer'] as $producer):?>
+					<p><?php echo $producer['url'] ? $html->link($producer['title'], $producer['url']) : $producer['title'];?></p>
+				<?php endforeach; ?>
+				<?php endif; ?>
 			</dd>
-                        <dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Payment Method'); ?></dt>
+			<dt<?php if ($i % 2 == 0) echo $class;?>><?php __('Payment Method'); ?></dt>
 			<dd<?php if ($i++ % 2 == 0) echo $class;?>>
 				<?php echo ($user['User']['payment_method'] ? $paymentMethods[$user['User']['payment_method']] : ''); ?>
 				&nbsp;
@@ -70,8 +70,8 @@
 		<?php echo $this->element('producers' . DS . 'view', array('producer' => $user['Producer'], 'isOwner' => true)); ?>
 	</div>
 	<?php endif; ?>
-        <div>
+	<div>
 		<?php echo $this->element('products' . DS . 'index', array('products' => array(), 'isOwner' => true)); ?>
-        </div>
+	</div>
 </div>
 <?php $jquery->tabs(); ?>

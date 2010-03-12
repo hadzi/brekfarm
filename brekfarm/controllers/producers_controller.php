@@ -242,15 +242,15 @@ class ProducersController extends AppController {
  * @return void
  * @access public
  */
-        public function admin_allow($id) {
-            $producer = $this->Producer->read(array('status'), $id);
-            if (empty($producer) || $producer['Producer']['status'] != 'denied') {
-                $this->Session->setFlash(__('Invalid Producer.', true));
-            } else {
-                $this->Producer->setStatus('ok');
-            }
-            $this->redirect($this->referer());
-        }
+	public function admin_allow($id) {
+		$producer = $this->Producer->read(array('status'), $id);
+		if (empty($producer) || $producer['Producer']['status'] != 'denied') {
+			$this->Session->setFlash(__('Invalid Producer.', true));
+		} else {
+			$this->Producer->setStatus('ok');
+		}
+		$this->redirect($this->referer());
+	}
 /**
  * Method for denying producers
  *
@@ -258,15 +258,15 @@ class ProducersController extends AppController {
  * @return void
  * @access public
  */
-        public function admin_deny($id) {
-            $producer = $this->Producer->read(array('status'), $id);
-            if (empty($producer) || $producer['Producer']['status'] == 'denied') {
-                $this->Session->setFlash(__('Invalid Producer.', true));
-            } else {
-                $this->Producer->setStatus('denied');
-            }
-            $this->redirect($this->referer());
-        }
+	public function admin_deny($id) {
+		$producer = $this->Producer->read(array('status'), $id);
+		if (empty($producer) || $producer['Producer']['status'] == 'denied') {
+			$this->Session->setFlash(__('Invalid Producer.', true));
+		} else {
+			$this->Producer->setStatus('denied');
+		}
+		$this->redirect($this->referer());
+	}
 /**
  * Method for attaching existing user account to producer
  *

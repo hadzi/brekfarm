@@ -22,7 +22,7 @@ class Producer extends AppModel {
 		'Status' => array(
 			'status' => array(
 				'new' => array(			// waiting for email token verification, generates payment (and refund if necessary) with status 'new' and null price
-                                        'ok',// IMPORTANT this status path (new->ok) was added for project start only
+					'ok',// IMPORTANT this status path (new->ok) was added for project start only
 					'pending',
 					'denied'),
 				'pending' => array(		// producer account waiting for first invoice
