@@ -1,3 +1,3 @@
-<?php $session->flash('email'); ?>
-<?php $session->flash('auth'); ?>
-<?php $session->flash(); ?>
+<?php echo $this->Session->flash('email'); ?>
+<?php echo $this->Session->flash('auth'); ?>
+<?php echo $this->Session->flash(); ?>
