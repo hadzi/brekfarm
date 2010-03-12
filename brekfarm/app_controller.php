@@ -32,7 +32,7 @@ class AppController extends Controller {
  * @var array
  * @access public
  */
-	public $helpers = array('Session', 'Html', 'Menu');
+	public $helpers = array('Html', 'Session', 'Javascript', 'Jquery', 'Tree', 'Menu');
 /**
  * List of used models
  *
