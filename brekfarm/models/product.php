@@ -53,6 +53,19 @@ class Product extends AppModel {
 			'dependent' => true)
 	);
 /**
+ * validation rules
+ *
+ * @var array
+ * @access public
+ */
+	public $validate = array(
+		'description' => array(),
+		'price' => array(),
+		'unit' => array(),
+		'category_id' => array(),
+		'producer_id' => array()
+	);
+/**
  * Statuses
  *
  * @var array
@@ -79,6 +92,18 @@ class Product extends AppModel {
 	public function afterDelete() {
 		parent::afterDelete();
 		$this->Category->clearCache();
+	}
+/**
+ * beforeValidate callback
+ *
+ * @param array $options
+ * @return boolean
+ * @access public
+ * @todo implement check of approved_from/approved_to
+ */
+	public function beforeValidate($options = array()) {
+		if (!parent::beforeValidate($options)) return false;
+		return true;
 	}
 }
 ?>
