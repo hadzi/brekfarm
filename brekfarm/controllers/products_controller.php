@@ -33,7 +33,7 @@ class ProductsController extends AppController {
 				$this->Session->setFlash(__('The Product could not be saved. Please, try again.', true));
 			}
 		}
-		$categories = $this->Product->Category->find('list');
+		$categories = $this->Product->Category->generatetreelist(array('model' => 'Product'), null, null, ' - ');
 		$producers = $this->Product->Producer->find('list');
 		$this->set(compact('categories', 'producers'));
 	}
