@@ -58,6 +58,13 @@ foreach ($producers as $producer):
 					echo $html->link(__('Set Owner', true), array('action' => 'owner', $producer['Producer']['id']));
 				}
 			?>
+			<?php
+				if ($producer['Producer']['status'] == 'denied') {
+					echo $html->link(__('Allow', true), array('action' => 'allow', $producer['Producer']['id']));
+				} else {
+					echo $html->link(__('Deny', true), array('action' => 'deny', $producer['Producer']['id']));
+                                }
+			?>
 		</td>
 	</tr>
 <?php endforeach; ?>
