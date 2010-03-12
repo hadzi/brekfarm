@@ -3,6 +3,7 @@
 	<li><a href="#"><?php echo $user['User']['username']; ?></a></li>
 	<?php if ($user['Producer']): ?>
 	<li><a href="#"><?php echo $user['Producer']['title']; ?></a></li>
+	<li><a href="#"><?php __('Your Products'); ?></a></li>
 	<?php endif; ?>
 </ul>
 <div class="panes">
@@ -69,5 +70,8 @@
 		<?php echo $this->element('producers' . DS . 'view', array('producer' => $user['Producer'], 'isOwner' => true)); ?>
 	</div>
 	<?php endif; ?>
+        <div>
+		<?php echo $this->element('products' . DS . 'index', array('products' => array(), 'isOwner' => true)); ?>
+        </div>
 </div>
 <?php $jquery->tabs(); ?>
