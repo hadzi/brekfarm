@@ -46,7 +46,7 @@ class GravatarHelper extends AppHelper {
  * @var array
  * @access private
  */
-	private $__default = array('default' => 'monsterid', 'size' => 60, 'rating' => null, 'ext' => false);
+	private $__default = array('d' => 'monsterid', 'size' => 60, 'rating' => null, 'ext' => false);
 /**
  * Helpers used by this helper
  *
@@ -65,7 +65,7 @@ class GravatarHelper extends AppHelper {
 	public function image($email, $options = array()) {
 		$options = $this->__cleanOptions(array_merge($this->__default, $options));
 		$imageUrl = $this->url($email, $options);
-		unset($options['default'], $options['size'], $options['rating'], $options['ext']);
+		unset($options['d'], $options['size'], $options['rating'], $options['ext']);
 		return $this->Html->image($imageUrl, $options);
 	}
 /**
@@ -99,7 +99,7 @@ class GravatarHelper extends AppHelper {
 		$options = $this->__cleanOptions(array_merge($this->__default, $options));
 		$images = array();
 		foreach ($this->__defaultIcons as $defaultIcon) {
-			$options['default'] = $defaultIcon;
+			$options['d'] = $defaultIcon;
 			$images[$defaultIcon] = $this->image(null, $options);
 		}
 		return $images;
@@ -120,11 +120,11 @@ class GravatarHelper extends AppHelper {
 		if (!$options['rating'] || !in_array(mb_strtolower($options['rating']), $this->__allowedRatings)) {
 			unset($options['rating']);
 		}
-		if (!$options['default']) {
-			unset($options['default']);
+		if (!$options['d']) {
+			unset($options['d']);
 		} else {
-			if (!in_array($options['default'], $this->__defaultIcons) && !Validation::url($options['default'])) {
-				unset($options['default']);
+			if (!in_array($options['d'], $this->__defaultIcons) && !Validation::url($options['d'])) {
+				unset($options['d']);
 			}
 		}
 		return $options;
@@ -151,7 +151,7 @@ class GravatarHelper extends AppHelper {
 		if (!empty($options)) {
 			$optionArray = array();
 			foreach ($options as $k => $v) {
-				if ($v == 'default' || $v == 'none') {
+				if ($v == 'd' || $v == 'none') {
 					continue;
 				}
 				$optionArray[] = $k . '=' . mb_strtolower($v);
