@@ -221,7 +221,7 @@ class UsersController extends AppController {
  * @access public
  */
 	public function logout() {
-		$this->Cookie->del('gate');
+		$this->Cookie->delete('gate');
 		$this->Session->setFlash(__('You were logged out.', true));
 		$this->redirect($this->Auth->logout());
 	}
@@ -325,7 +325,7 @@ class UsersController extends AppController {
  */
 	protected function _password() {
 		if ($this->User->save($this->data, true, array('passwd'))) {
-			$this->Cookie->del('gate');
+			$this->Cookie->delete('gate');
 			$this->Session->setFlash(__('Your password has been saved.', true), 'default', array(), 'auth');
 			return array('action' => 'home');
 		}

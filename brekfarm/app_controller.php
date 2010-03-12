@@ -167,7 +167,7 @@ class AppController extends Controller {
 				$this->Shield->record('Autologin', $this->Auth->user('email'), 0, 'User');
 			} else {
 				$this->Shield->record('Invalid Autologin Cookie', $cookie['username'], 5, 'User');
-				$this->Cookie->del('gate');
+				$this->Cookie->delete('gate');
 			}
 		}
 	}
