@@ -16,10 +16,10 @@
 			'type' => 'select',
 			'options' => $categories),
 		'Product.producer_id' => array('type' => 'hidden'),
-		'Product.approved_from' => array(
-		),
-		'Product.approved_to' => array(
-		)
+//		'Product.approved_from' => array(
+//		),
+//		'Product.approved_to' => array(
+//		)
 	);
 	if ($this->Session->read('Auth.User.role') === 'admin') {
 //		$inputs['Product.producer_id']['xxx'] = '';

@@ -18,7 +18,7 @@ class JqueryHelper extends AppHelper {
  * @var array
  * @access public
  */
-	public $helpers = array('Form', 'Javascript');
+	public $helpers = array('Html', 'Form', 'Javascript');
 /**
  * Callback switcher
  *
@@ -44,7 +44,10 @@ class JqueryHelper extends AppHelper {
 			'http://cdn.jquerytools.org/1.1.2/tiny/jquery.tools.min.js',
 			'jquery.tools.min'),
 		'form' => 'jquery.form.min',
-		'potato.menu' => 'jquery.ui.potato.menu.min'
+		'potato.menu' => 'jquery.ui.potato.menu.min',
+		'date' => 'date.js',
+		'jquery.datePicker' => 'jquery.datePicker.js',
+		'cake.datePicker' => 'cake.datePicker.js'
 	);
 /**
  * Default options for used jquery plugins
@@ -61,7 +64,9 @@ class JqueryHelper extends AppHelper {
 			'resetForm' => false,
 			'clearForm' => false),
 		'tabs' => array(
-			'effect' => 'default')
+			'effect' => 'default'),
+		'datePicker' => array(
+			'format' => '%Y-%m-%d')
 	);
 /**
  * Flag if scripts should be cached in (and used as) file JS.'filename.js'
@@ -158,6 +163,36 @@ class JqueryHelper extends AppHelper {
 		if ($args = func_get_args()) {
 			$this->_uses = array_merge($this->_uses, $args);
 		}
+	}
+/**
+ * jQuery date picker
+ *
+ * @param string $fieldName
+ * @param array $options
+ * @return string
+ * @access public
+ */
+	public function datePicker($fieldName, $options = array()) {
+		$this->uses('jquery', 'date', 'jquery.datePicker', 'cake.datePicker');
+		$this->Html->css('datePicker', null, array('inline' => false));
+
+		$this->Form->setEntity($fieldName);
+		$htmlAttributes = $this->Form->domId($options);
+		$divOptions['class'] = 'date';
+		$options['type'] = 'date';
+		$options['div']['class'] = 'date';
+		$options['dateFormat'] = 'DMY';
+		$options['minYear'] = isset($options['minYear']) ? $options['minYear'] : (date('Y') - 20);
+		$options['maxYear'] = isset($options['maxYear']) ? $options['maxYear'] : (date('Y') + 20);
+
+		$options['after'] = $this->Html->image('calendar.png', array('id'=> $htmlAttributes['id'], 'style'=>'cursor:pointer'));
+
+		if (isset($options['empty'])) {
+			$options['after'] .= $this->Html->image('b_drop.png', array('id'=> $htmlAttributes['id']."_drop", 'style'=>'cursor:pointer'));
+		}
+		$output = $this->Form->input($fieldName, $options);
+		$output .= $this->Javascript->codeBlock("datepick('" . $htmlAttributes['id'] . "','01/01/" . $options['minYear'] . "','31/12/" . $options['maxYear'] . "');");
+		return $output;
 	}
 /**
  * jQuery ajax replacement for FormHelper::create()
