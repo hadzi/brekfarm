@@ -34,7 +34,13 @@ class ProductsController extends AppController {
 			}
 		}
 		$categories = $this->Product->Category->generatetreelist(array('model' => 'Product'), null, null, ' - ');
-		$producers = $this->Product->Producer->find('list');
+		$producers = null;
+		if ($this->Auth->user('role') === 'admin') {
+			$producers = $this->Product->Producer->find('list');
+		} else {
+			$producer = $this->Auth->user('Producer');
+			$this->data = $this->Product->create(array('producer_id' => $producer['id']));
+		}
 		$this->set(compact('categories', 'producers'));
 	}
 /**

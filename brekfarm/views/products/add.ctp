@@ -16,13 +16,11 @@
 			'type' => 'select',
 			'options' => $categories),
 		'Product.producer_id' => array('type' => 'hidden'),
-//		'Product.approved_from' => array(
-//		),
-//		'Product.approved_to' => array(
-//		)
 	);
 	if ($this->Session->read('Auth.User.role') === 'admin') {
-//		$inputs['Product.producer_id']['xxx'] = '';
+		$inputs['Product.producer_id']['label'] = __('Producer', true);
+		$inputs['Product.producer_id']['type'] = 'select';
+		$inputs['Product.producer_id']['options'] = $producers;
 	}
 ?>
 <?php echo $form->create('Product', array('class' => 'hform')); ?>
