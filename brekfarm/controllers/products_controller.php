@@ -24,9 +24,17 @@ class ProductsController extends AppController {
  * @todo
  */
 	public function add() {
-		if (!empty($this->data)) {
+		if (!$this->data) {
+			$data = array();
+			if ($this->Auth->user('role') !== 'admin') {
+				$producer = $this->Auth->user('Producer');
+				$data['producer_id'] = $producer['id'];
+			}
+			$this->data = $this->Product->create($data);
+		} else {
 			$this->Product->create();
-			if (true || $this->Product->save($this->data)) {
+			$fields = array('description', 'price', 'unit', 'category_id', 'producer_id');
+			if ($this->Product->save($this->data, true, $fields)) {
 				$this->Session->setFlash(__('The Product has been saved', true));
 				$this->redirect(array('action'=>'index'));
 			} else {
@@ -34,13 +42,7 @@ class ProductsController extends AppController {
 			}
 		}
 		$categories = $this->Product->Category->generatetreelist(array('model' => 'Product'), null, null, ' - ');
-		$producers = null;
-		if ($this->Auth->user('role') === 'admin') {
-			$producers = $this->Product->Producer->find('list');
-		} else {
-			$producer = $this->Auth->user('Producer');
-			$this->data = $this->Product->create(array('producer_id' => $producer['id']));
-		}
+		$producers = ($this->Auth->user('role') === 'admin') ? $this->Product->Producer->find('list') : null;
 		$this->set(compact('categories', 'producers'));
 	}
 /**

@@ -18,7 +18,8 @@ class StatusBehavior extends ModelBehavior {
 				'inList' => array(
 					'rule' => array('inList', $statuses)),
 				'validPath' => array(
-					'rule' => 'validateStatus')
+					'rule' => 'validateStatus',
+					'on' => 'update')
 			);
 		}
 		if (empty($Model->statuses)) {

@@ -16,6 +16,7 @@
 			'type' => 'select',
 			'options' => $categories),
 		'Product.producer_id' => array('type' => 'hidden'),
+		'Product.status' => array('type' => 'hidden')
 	);
 	if ($this->Session->read('Auth.User.role') === 'admin') {
 		$inputs['Product.producer_id']['label'] = __('Producer', true);

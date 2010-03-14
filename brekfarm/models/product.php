@@ -59,11 +59,16 @@ class Product extends AppModel {
  * @access public
  */
 	public $validate = array(
-		'description' => array(),
-		'price' => array(),
-		'unit' => array(),
-		'category_id' => array(),
-		'producer_id' => array()
+		'description' => array(
+			'rule' => 'notEmpty'),
+		'price' => array(
+			'rule' => 'numeric'),
+		'unit' => array(
+			'rule' => 'notEmpty'),
+		'category_id' => array(
+			'rule' => 'notEmpty'),
+		'producer_id' => array(
+			'rule' => 'notEmpty')
 	);
 /**
  * Statuses
