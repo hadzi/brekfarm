@@ -42,7 +42,7 @@ Mock::generatePartial(
 );
 Mock::generatePartial(
 	'ModelTask', 'MockModelTask',
-	array('in', 'out', 'err', 'createFile', '_stop', '_checkUnitTest')
+	array('in', 'out', 'hr', 'err', 'createFile', '_stop', '_checkUnitTest')
 );
 
 Mock::generate(
@@ -78,6 +78,8 @@ class ModelTaskTest extends CakeTestCase {
 	function startTest() {
 		$this->Dispatcher =& new TestModelTaskMockShellDispatcher();
 		$this->Task =& new MockModelTask($this->Dispatcher);
+		$this->Task->name = 'ModelTask';
+		$this->Task->interactive = true;
 		$this->Task->Dispatch =& $this->Dispatcher;
 		$this->Task->Dispatch->shellPaths = App::path('shells');
 		$this->Task->Template =& new TemplateTask($this->Task->Dispatch);
@@ -228,6 +230,40 @@ class ModelTaskTest extends CakeTestCase {
 
 		$result = $this->Task->fieldValidation('text', array('type' => 'string', 'length' => 10, 'null' => false));
 		$expected = array('notempty' => 'notempty', 'maxlength' => 'maxlength');
+		$this->assertEqual($result, $expected);
+	}
+
+/**
+ * test that a bogus response doesn't cause errors to bubble up.
+ *
+ * @return void
+ */
+	function testInteractiveFieldValidationWithBogusResponse() {
+		$this->Task->initValidations();
+		$this->Task->interactive = true;
+		$this->Task->setReturnValueAt(0, 'in', '999999');
+		$this->Task->setReturnValueAt(1, 'in', '19');
+		$this->Task->setReturnValueAt(2, 'in', 'n');
+		$this->Task->expectAt(4, 'out', array(new PatternExpectation('/make a valid/')));
+
+		$result = $this->Task->fieldValidation('text', array('type' => 'string', 'length' => 10, 'null' => false));
+		$expected = array('notempty' => 'notempty');
+		$this->assertEqual($result, $expected);
+	}
+
+/**
+ * test that a regular expression can be used for validation.
+ *
+ * @return void
+ */
+	function testInteractiveFieldValidationWithRegexp() {
+		$this->Task->initValidations();
+		$this->Task->interactive = true;
+		$this->Task->setReturnValueAt(0, 'in', '/^[a-z]{0,9}$/');
+		$this->Task->setReturnValueAt(1, 'in', 'n');
+
+		$result = $this->Task->fieldValidation('text', array('type' => 'string', 'length' => 10, 'null' => false));
+		$expected = array('a_z_0_9' => '/^[a-z]{0,9}$/');
 		$this->assertEqual($result, $expected);
 	}
 
@@ -485,11 +521,14 @@ class ModelTaskTest extends CakeTestCase {
  * @access public
  */
 	function testBakeFixture() {
+		$this->Task->plugin = 'test_plugin';
+		$this->Task->interactive = true;
 		$this->Task->Fixture->expectAt(0, 'bake', array('Article', 'articles'));
 		$this->Task->bakeFixture('Article', 'articles');
 
 		$this->assertEqual($this->Task->plugin, $this->Task->Fixture->plugin);
 		$this->assertEqual($this->Task->connection, $this->Task->Fixture->connection);
+		$this->assertEqual($this->Task->interactive, $this->Task->Fixture->interactive);
 	}
 
 /**
@@ -499,11 +538,14 @@ class ModelTaskTest extends CakeTestCase {
  * @access public
  */
 	function testBakeTest() {
+		$this->Task->plugin = 'test_plugin';
+		$this->Task->interactive = true;
 		$this->Task->Test->expectAt(0, 'bake', array('Model', 'Article'));
 		$this->Task->bakeTest('Article');
 
 		$this->assertEqual($this->Task->plugin, $this->Task->Test->plugin);
 		$this->assertEqual($this->Task->connection, $this->Task->Test->connection);
+		$this->assertEqual($this->Task->interactive, $this->Task->Test->interactive);
 	}
 
 /**
@@ -705,6 +747,32 @@ STRINGEND;
 
 		$this->assertEqual(count(ClassRegistry::keys()), 0);
 		$this->assertEqual(count(ClassRegistry::mapKeys()), 0);
+	}
+
+/**
+ * test that execute passes with different inflections of the same name.
+ *
+ * @return void
+ * @access public
+ */
+	function testExecuteWithNamedModelVariations() {
+		$this->Task->connection = 'test_suite';
+		$this->Task->path = '/my/path/';
+		$this->Task->setReturnValue('_checkUnitTest', 1);
+
+		$this->Task->args = array('article');
+		$filename = '/my/path/article.php';
+
+		$this->Task->expectAt(0, 'createFile', array($filename, new PatternExpectation('/class Article extends AppModel/')));
+		$this->Task->execute();
+
+		$this->Task->args = array('Articles');
+		$this->Task->expectAt(1, 'createFile', array($filename, new PatternExpectation('/class Article extends AppModel/')));
+		$this->Task->execute();
+
+		$this->Task->args = array('articles');
+		$this->Task->expectAt(2, 'createFile', array($filename, new PatternExpectation('/class Article extends AppModel/')));
+		$this->Task->execute();
 	}
 
 /**

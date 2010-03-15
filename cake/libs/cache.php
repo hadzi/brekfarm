@@ -163,7 +163,7 @@ class Cache {
  * @return array Array of configured Cache config names.
  */
 	function configured() {
-		$self = Cache::getInstance();
+		$self =& Cache::getInstance();
 		return array_keys($self->__config);
 	}
 
@@ -176,7 +176,7 @@ class Cache {
  * @return boolen success of the removal, returns false when the config does not exist.
  */
 	function drop($name) {
-		$self = Cache::getInstance();
+		$self =& Cache::getInstance();
 		if (!isset($self->__config[$name])) {
 			return false;
 		}
@@ -234,7 +234,7 @@ class Cache {
 				if (is_string($settings) && $value !== null) {
 					$settings = array($settings => $value);
 				}
-				$settings = array_merge($self->__config[$self->__name], $settings);
+				$settings = array_merge($self->__config[$name], $settings);
 				if (isset($settings['duration']) && !is_numeric($settings['duration'])) {
 					$settings['duration'] = strtotime($settings['duration']) - time();
 				}

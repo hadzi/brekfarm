@@ -653,7 +653,7 @@ class Controller extends Object {
 
 			if ($this->persistModel === true) {
 				$this->_persist($modelClass, true, $this->{$modelClass});
-				$registry = ClassRegistry::getInstance();
+				$registry =& ClassRegistry::getInstance();
 				$this->_persist($modelClass . 'registry', true, $registry->__objects, 'registry');
 			}
 		} else {
@@ -1168,8 +1168,13 @@ class Controller extends Object {
 			$type = $defaults[0];
 			unset($defaults[0]);
 		}
+
 		$options = array_merge(array('page' => 1, 'limit' => 20), $defaults, $options);
-		$options['limit'] = (empty($options['limit']) || !is_numeric($options['limit'])) ? 1 : $options['limit'];
+		$options['limit'] = (int) $options['limit'];
+		if (empty($options['limit']) || $options['limit'] < 1) {
+			$options['limit'] = 1;
+		}
+
 		extract($options);
 
 		if (is_array($scope) && !empty($scope)) {
